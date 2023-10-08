@@ -1,26 +1,43 @@
-function convertPokemonTypesToli(pokemonType){
-    return pokemonType.map((typeSlot)=> `<li class = "types"> ${typeSlot.type.name}</li>`)
-}
 
-function convertPokemonTohtml(pokemon){
-    return `
-            <li class="pokemon">
-                <span class="number">#${pokemon.order}</span>
+const pokemonList = document.getElementById(`pokemonList`);
+const loadMoreButton = document.getElementById(`loadMoreButton`);
+
+const maxRecords = 151
+const limit = 5
+let offset = 0
+
+function loadPokemonItens(offset, limit){
+
+    pokeAPI.getPokemons(offset, limit).then((pokemons = []) => {
+        const newHTML = pokemons.map((pokemon) => `
+            <li class="pokemon ${pokemon.type}">
+                <span class="number">#${pokemon.number}</span>
                 <span class="name">${pokemon.name}</span>
-
+    
                 <div class="detail">
                     <ol class="types">
-                        ${convertPokemonTypesToli(pokemon.types).join('')}
+                        ${pokemon.types.map((type)=> `<li class="type">${type}</li>`).join(``)}
                     </ol>
-                    <img src="${pokemon.sprites.other.dream_world.front_default}" alt="${pokemon.name}">
+                    <img src="${pokemon.photo}" alt="${pokemon.name}">
                 </div>                
             </li>
-        `
+        `).join(``)
+        pokemonList.innerHTML += newHTML 
+    })
 }
 
-const pokemonList = document.getElementById(`pokemonList`)
+loadPokemonItens(offset, limit)
 
-pokeAPI.getPokemons().then((pokemons = []) => {
-    pokemonList.innerHTML += pokemons.map(convertPokemonTohtml).join(``)   
+loadMoreButton.addEventListener('click', () => {
+    offset += limit
+    const qtdRecordsWithNexPage = offset + limit
+
+    if (qtdRecordsWithNexPage >= maxRecords) {
+        const newLimit = maxRecords - offset
+        loadPokemonItens(offset, newLimit)
+
+        loadMoreButton.parentElement.removeChild(loadMoreButton)
+    } else {
+        loadPokemonItens(offset, limit)
+    }
 })
-
