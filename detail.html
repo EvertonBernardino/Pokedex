@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/Img/favicon.ico" type="image/x-icon">
+    <title>Pokedex</title>
+
+     <!---Normalize CSS-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+     <!--Fonte Roboto-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="assets/css/detail.css">
+
+</head>
+<body>
+    <section class="grass">
+        <nav>
+            <a class="btn-fixed" href="index.html">
+                <span class="material-icons">🠔</span>
+            </a>            
+        </nav>
+        <section class="content">   
+            <span class="titulo"> 
+                <h1 class="name">Bulbasaur</h1>
+                <h2 class="number">#001</h2>
+            </span>
+            <div class="detail">
+                <ol class="types">
+                    <li class="type">Grass</li>
+                    <li class="type">poison</li>
+                </ol>
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="Bulbasaur">
+            </div>
+        </section>
+        <section class="inf-pokemons">
+            <ul class="menu-bar">
+                <li class="showArticle selected"><a href="#about">About</a></li>
+                <li class="showArticle"><a href="#base-status">Base Status</a></li>
+                <li class="showArticle"><a href="#evolution">Evolution</a></li>
+                <li class="showArticle"><a href="#moves">Moves</a></li>
+            </ul>
+            <article id="about">
+                <ol>
+                    <li>Species: Seed</li>
+                    <li>Height: 3,3.6"(0.70cm)</li>
+                    <li>Weight: 15.2lbs(6.9kg)</li>
+                    <li>Abilites: Overgroe, Chiorophy</li>
+                    <h3>Breeding</h3>
+                    <li>Gendar: 87.5%  12.5%</li>
+                    <li>Egg Groups: Monster</li>
+                    <li>Egg Cycle: Grass</li>
+                </ol>
+            </article>              
+        
+            <article id="base-status">
+                <ol>
+                    <li>HP: 45</li>
+                    <li>Atack: 60</li>
+                    <li>Defese: 48</li>
+                    <li>Sp. Atk: 65</li>
+                    <li>Sp. Def: 65</li>
+                    <li>Speed: 45</li>
+                    <li>Total</li>                
+                </ol>
+                <h3>Type defeses</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum culpa perferendis qui illum doloremque, vero repudiandae id, nulla facere labore sunt, quia inventore officia deleniti ratione neque. Ducimus, quia magni?</p>
+            </article>
+
+            <article id="evolution">
+                <ol>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde architecto ipsum quidem amet reprehenderit, nesciunt fugiat et qui officiis necessitatibus! Natus enim quidem vel voluptatum velit. Praesentium rem aperiam tenetur.
+                </ol>
+            </article>
+
+            <article id="moves">
+                <ol>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam voluptatem obcaecati nemo incidunt. Aut ratione minus quo vitae necessitatibus! Harum labore modi magni rem doloribus odio in placeat qui minima?
+                </ol>
+            </article>
+           
+        </section>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="assets/js/detail.js"></script>
+    <script src="assets/js/poke-api.js"></script>
+</body>
+</html>

@@ -6,6 +6,9 @@
     list-style: none;
 
 }
+a{
+    text-decoration: none;
+}
 .normal {
     background: #a6a877 ;
     background-image: url("/assets/Img/pokemon.png");
